@@ -55,6 +55,7 @@ async function getUserProfile() {
   sessionStorage.setItem("LinePicture", profile.pictureUrl);
   str += '<div><img src="'+ sessionStorage.getItem("LinePicture") +'" class="add-profile" width="100px"></div>';
   str += '<div class="NameLine">'+ sessionStorage.getItem("LineName")+'</div>';
+  alert(sessionStorage.getItem("LineID"));
   $("#MyProfile").html(str);  
 }
 
@@ -68,7 +69,7 @@ function openWindow() {
 
 
 function Connect_DB() {
-  if(sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
+  if(sessionStorage.getItem("LineID")=="") { location.href = "index.html"; }
   var firebaseConfig = {
     apiKey: "AIzaSyDfTJJ425U4OY0xac6jdhtSxDeuJ-OF-lE",
     authDomain: "retailproject-6f4fc.firebaseapp.com",
