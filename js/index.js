@@ -55,7 +55,7 @@ async function getUserProfile() {
   sessionStorage.setItem("LinePicture", profile.pictureUrl);
   str += '<div><img src="'+ sessionStorage.getItem("LinePicture") +'" class="add-profile" width="100px"></div>';
   str += '<div class="NameLine">'+ sessionStorage.getItem("LineName")+'</div>';
-  alert(sessionStorage.getItem("LineID"));
+  //alert(sessionStorage.getItem("LineID"));
   $("#MyProfile").html(str);  
 }
 
@@ -88,7 +88,7 @@ function Connect_DB() {
 
 
 function CheckData() {
-  console.log(sessionStorage.getItem("LineID"));
+  console.log(sessionStorage.getItem("LineID"))+"=====";
   dbProfile.where('lineID','==',sessionStorage.getItem("LineID"))
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
@@ -103,6 +103,7 @@ function CheckData() {
         sessionStorage.setItem("StatusRegister", doc.data().StatusRegister);
         window.location.href = 'mondee.html';
       }
+      alert("found==="+sessionStorage.getItem("LineID"));
       document.getElementById("txtEmpID").value = doc.data().empID;
       document.getElementById("txtEmpName").value = doc.data().empName;
       document.getElementById("txtEmpPhone").value = doc.data().empPhone;
