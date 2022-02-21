@@ -49,7 +49,7 @@ async function main() {
 async function getUserProfile() {
   var str = "";
   const profile = await liff.getProfile();
-  console.log(profile.displayName);
+  console.log(profile.userId+" === "+profile.displayName);
   sessionStorage.setItem("LineID", profile.userId);
   sessionStorage.setItem("LineName", profile.displayName);
   sessionStorage.setItem("LinePicture", profile.pictureUrl);
@@ -69,7 +69,7 @@ function openWindow() {
 
 
 function Connect_DB() {
-  if(sessionStorage.getItem("LineID")=="") { location.href = "index.html"; }
+  if(sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
   var firebaseConfig = {
     apiKey: "AIzaSyDfTJJ425U4OY0xac6jdhtSxDeuJ-OF-lE",
     authDomain: "retailproject-6f4fc.firebaseapp.com",
