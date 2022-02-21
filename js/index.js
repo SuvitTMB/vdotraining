@@ -70,7 +70,7 @@ function openWindow() {
 
 
 function Connect_DB() {
-  //if(sessionStorage.getItem("LineID")==null) { main(); }
+  if(sessionStorage.getItem("LineID")==null) { main(); }
   var firebaseConfig = {
     apiKey: "AIzaSyDfTJJ425U4OY0xac6jdhtSxDeuJ-OF-lE",
     authDomain: "retailproject-6f4fc.firebaseapp.com",
