@@ -49,6 +49,7 @@ async function main() {
 async function getUserProfile() {
   var str = "";
   const profile = await liff.getProfile();
+  console.log(profile.displayName);
   sessionStorage.setItem("LineID", profile.userId);
   sessionStorage.setItem("LineName", profile.displayName);
   sessionStorage.setItem("LinePicture", profile.pictureUrl);
