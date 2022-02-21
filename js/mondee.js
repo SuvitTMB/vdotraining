@@ -3,7 +3,8 @@ var dbVDOTraining = "";
 var sVDOgroup = 2;
 
 $(document).ready(function () {
-  	Connect_DB();
+  if(sessionStorage.getItem("LineID")=="") { location.href = "index.html"; }
+  Connect_DB(); 
 });
 
 
@@ -33,7 +34,7 @@ function LoadVDOTraining() {
   .orderBy('VDOrank','desc')
   .limit(10).get().then((snapshot)=> {
     snapshot.forEach(doc=> {
-    	i = i+1;
+    i = i+1;
 		str += '<div class="col-lg-6 col-md-2 slide text-center boxvdo" data-aos="fade-left" onclick="OpenVdo(\''+ doc.id +'\','+i+')">';
 		str += '<div class="boxvdo-border member"><div class="boxvdo-img">';
 		str += '<img src="'+doc.data().VDOimg+'" class="img-fluid" style="border-radius: 10px;"></div>';
