@@ -1,0 +1,212 @@
+.clr {
+  clear: both;
+}
+input[type=text], input[type=number], input[type=tel], select, textarea {
+  width: 95%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin: 5px 0 10px 0;
+  font-size: 12px;
+  background: #ecf6ff;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-size: 12px;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/*
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+*/
+
+.imgprofile {
+  width:150px;
+  padding:4px;
+  /*border: 5px solid #ffffff;**/
+  border-radius: 50%
+}
+
+.imgprofile-s {
+  width:25%;
+  padding:4px;
+  /*border: 5px solid #ffffff;**/
+  border-radius: 50%
+}
+
+.imggame {
+  width:100%;
+  border-radius: 5%
+}
+
+.boxgame {
+  width:90%;
+  min-height: 100px;
+  /*
+  border-top-right-radius:15px;
+  border-bottom-right-radius: 15px; 
+  */
+
+  background:#0041C8;
+  border-radius: 15px;
+  border: 3px solid #fff;
+  margin:15px 0;
+  padding:8px 20px;
+  color:#ffffff;
+}
+
+.boxgame:hover {
+  background:#f68b1f;
+  cursor: pointer;
+}
+
+.boxnumber {
+  margin:2px;
+  width:38px;
+  height:38px;
+  background-color: #002d63;
+  color:#ffffff;
+  text-align: center;
+  float: left; 
+  border: 3px solid #f68b1f;
+  border-radius: 50%;
+}
+
+.boxnumber:hover {
+  background-color: #f68b1f;
+  border: 3px solid #0056ff;
+  cursor: pointer;
+
+}
+
+
+.txtShowNum {
+  width: 20%;
+  padding: 5px;
+  font-size : 30px;
+  border: 2px solid #ccc;
+  background-color: #0056ff;
+  color:#fff;
+  border-radius: 8px;
+  margin: 5px 0 10px 0;text-align: center;
+}  
+
+.countgame2 {
+  min-width: 20%;
+  padding: 5px 15px;
+  font-size : 14px;
+  border: 2px solid #ccc;
+  background-color: #ffffff;
+  color:#0056ff;
+  border-radius: 8px;
+  margin: 5px 0 10px 0;text-align: center;
+}  
+
+.boxQ {
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  width:80%;
+  padding:8px 15px;
+  text-align: center;
+  background:#fff;
+  margin:10px;
+  color:#000;
+}
+.boxQ:hover { 
+  background: #f68b1f;
+  color:#fff;
+  cursor: pointer;
+}
+.boxQselect {
+  width:80%;
+  padding:8px 15px;
+  text-align: center;
+  border-radius: 12px;
+  background:#002d63;
+  margin:10px;
+  color:#fff;
+}
+
+.blue {
+  background: #fff;
+}
+
+.color1 {
+  background: #0cbcc2;
+  color:#ffffff;
+}
+.color2 {
+  background: #0cbcc2;
+  color:#ffffff;
+}
+.color3 {
+  background: #0cbcc2;
+  color:#ffffff;
+}
+.color4 {
+  background: #0cbcc2;
+  color:#ffffff;
+}
+.color5 {
+  background: #0cbcc2;
+  color:#ffffff;
+}
+
+.w {
+  background: #fff;
+  color:#000000;
+}
+.QuizQ {
+  margin:15px 0 25px 0;
+  color:#ffff00;
+  font-size:14px;
+}
+.timer {
+  width:230px;
+  margin-top:15px;
+  padding:5px 10px;
+  border: 2px solid #ff0000;
+  background: #ff0000;
+  color:#fff; border-radius: 8px;
+}
+.NewQuestion {
+  margin:20px 10px; color:#ffff00;
+  padding:10px; text-align: center; font-size:14px;
+}

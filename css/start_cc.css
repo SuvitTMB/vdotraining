@@ -1,0 +1,183 @@
+/*========================================================
+          Quiz Section
+========================================================*/
+/*styling quiz area*/
+.main {
+  /*background-color: white;*/
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 20px;
+  /*
+  padding: 30px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  */
+}
+
+/*Editing the number of questions
+span {
+  float: left;
+}
+*/
+/*Editing the number of questions
+span {
+  float: left;
+}*/
+
+/*format text*/
+.quiz-questions p {
+  padding: 10px 10px 0;
+  font-size: 16px; color:#0056ff;
+  font-weight: 700;
+}
+
+/*Form area width*/
+.form-area, ul {
+  margin: 20px auto;
+  max-width: 550px;
+}
+
+/*formatting answers*/
+li {
+  list-style-type: none;
+  text-align: left;
+  background-color: transparent;
+  margin: 10px 5px;
+  padding: 8px 40px;
+  border: 1px solid lightgray;
+  font-weight: normal;
+  margin-left: -40px;
+  text-align: center;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: #fbf7f3;
+}
+
+li:hover {
+  background: #d8e5fe;
+  color:#000000;
+}
+
+/*Change effect of question when the questions is selected*/
+.selected, .selected:hover {
+  background: #0056ff;
+  color:#ffffff;
+}
+
+/*change correct answer background*/
+.correct, .correct:hover {
+  background: #4CAF50;
+  color: white;
+}
+
+/*change wrong answer background*/
+.wrong, .wrong:hover {
+  background: #db3c3c;
+  color: white;
+}
+
+/*========================================================
+        Submit Button
+========================================================*/
+.main button {
+  /*font-family: "Roboto", sans-serif;*/
+  text-transform: uppercase;
+  /*width: 20%;*/
+  border: none;
+  padding: 10px 35px;
+  color: #FFFFFF;
+  border-radius: 50px;
+}
+
+.submit:hover, .submit:active, .submit:focus {
+  background: #43A047;
+}
+
+.submit {
+  background: #4CAF50;
+  padding: 8px 25px;
+  min-width: 120px;
+}
+
+/*next question button*/
+.next {
+  background: #002d63;
+  padding: 8px 25px;
+  min-width: 120px;
+}
+
+.next:hover, .next:active, .next:focus {
+  background: #002d63;
+}
+
+.restart {
+  background-color:
+}
+
+/*========================================================
+        Results
+========================================================*/
+.circle{
+  position: relative;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  background: #bdc3c7;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.fill{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80%;
+  background: #0056ff;
+}
+/*
+h3 {
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  font-size: 40pt;
+  line-height: 0;
+  font-weight: normal;
+}
+*/
+.circle p {
+  margin: 400px;
+}
+
+/*========================================================
+        Confeeti Effect
+========================================================*/
+canvas{
+  position:absolute;
+	left:0;
+	top:0;
+	z-index:0;
+	border:0px solid #000;
+}
+.quiz-question {
+  width:90%; text-align: center; color:#ffffff;font-size: 17px; font-weight: 700px; padding-top:10px;
+  line-height: 1.3em; padding-bottom: 25px;
+}
+.quiz-number {
+  width:100%;padding-top:20px; color:#000000; font-size:12px;
+}
+.text-false {
+  font-size:13px; color:#ff0000; line-height: 1.4em; padding:10px;
+}
+.text-true {
+  font-size:13px; color:#05e215; line-height: 1.4em; padding:10px;
+}
+.noshow {
+  pointer-events: none;
+}
+.btn-add {
+  margin-top:20px;min-width:80px !important;
+}
