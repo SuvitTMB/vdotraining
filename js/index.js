@@ -31,6 +31,7 @@ $(document).ready(function () {
 
   main()
   Connect_DB();
+  CheckData();
 });
 
 
@@ -82,7 +83,7 @@ function Connect_DB() {
   };
   firebase.initializeApp(firebaseConfig);
   dbProfile = firebase.firestore().collection("CheckProfile");
-  CheckData();
+  //CheckData();
 }
 
 
