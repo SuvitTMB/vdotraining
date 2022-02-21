@@ -120,7 +120,7 @@ alert(sessionStorage.getItem("LineID"));
 
 
 
-function CheckData() {
+function CheckData000() {
   console.log(sessionStorage.getItem("LineID")+"=====");
   dbProfile.where('lineID','==',sessionStorage.getItem("LineID"))
   .get().then((snapshot)=> {
