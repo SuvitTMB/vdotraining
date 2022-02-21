@@ -69,7 +69,8 @@ function LoadVDOid() {
 		});
 		str +='<div style="max-height:300px;"><center>';
 		//str +='<iframe width="100%" height="280" src="'+doc.data().VDOurl+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-		str +='<iframe width="100%" height="280" src="'+doc.data().VDOurl+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+		str +='<iframe width="100%" height="280" src="'+doc.data().VDOurl+'?autoplay=1&mute=1" allow="autoplay" allowfullscreen></iframe>';
+    //str +='<iframe width="100%" height="280" src="http://www.youtube.com/embed/evL5jaZx8vk?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 		str +='</center></div>';
 		$("#NameVDO").html('<div class="boxvdo-header">'+doc.data().VDOname+'</div>');
 		$("#DetailVDO").html('<div class="boxvdo-line1" style="padding-top:10px;height:auto;">'+doc.data().VDOdetail+'</div>');
