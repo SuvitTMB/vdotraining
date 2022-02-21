@@ -49,10 +49,10 @@ async function main() {
 async function getUserProfile() {
   var str = "";
   const profile = await liff.getProfile();
-  console.log(profile.userId+" === "+profile.displayName);
   sessionStorage.setItem("LineID", profile.userId);
   sessionStorage.setItem("LineName", profile.displayName);
   sessionStorage.setItem("LinePicture", profile.pictureUrl);
+  console.log(sessionStorage.getItem("LineID")+" === "+sessionStorage.getItem("LineName"));
   str += '<div><img src="'+ sessionStorage.getItem("LinePicture") +'" class="add-profile" width="100px"></div>';
   str += '<div class="NameLine">'+ sessionStorage.getItem("LineName")+'</div>';
   //alert(sessionStorage.getItem("LineID"));
@@ -88,7 +88,8 @@ function Connect_DB() {
 
 
 function CheckData() {
-  console.log(sessionStorage.getItem("LineID"))+"=====";
+  alert("Line91---"+sessionStorage.getItem("LineID"));
+  console.log(sessionStorage.getItem("LineID")+"=====");
   dbProfile.where('lineID','==',sessionStorage.getItem("LineID"))
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
