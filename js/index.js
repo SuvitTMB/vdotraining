@@ -83,8 +83,8 @@ function Connect_DB() {
   };
   firebase.initializeApp(firebaseConfig);
   dbProfile = firebase.firestore().collection("CheckProfile");
-  //CheckData();
-alert(sessionStorage.getItem("LineID"));
+//alert(sessionStorage.getItem("LineID"));
+  CheckData();
 /*
   console.log(sessionStorage.getItem("LineID")+"=====");
   dbProfile.where('lineID','==',sessionStorage.getItem("LineID"))
@@ -120,7 +120,8 @@ alert(sessionStorage.getItem("LineID"));
 
 
 
-function CheckData000() {
+function CheckData() {
+  alert(rage.getItem("LineID"));
   console.log(sessionStorage.getItem("LineID")+"=====");
   dbProfile.where('lineID','==',sessionStorage.getItem("LineID"))
   .get().then((snapshot)=> {
