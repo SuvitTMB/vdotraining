@@ -31,7 +31,7 @@ $(document).ready(function () {
 
   main()
   Connect_DB();
-  CheckData();
+  //CheckData();
 });
 
 
@@ -84,12 +84,43 @@ function Connect_DB() {
   firebase.initializeApp(firebaseConfig);
   dbProfile = firebase.firestore().collection("CheckProfile");
   //CheckData();
+alert(sessionStorage.getItem("LineID"));
+/*
+  console.log(sessionStorage.getItem("LineID")+"=====");
+  dbProfile.where('lineID','==',sessionStorage.getItem("LineID"))
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      EidCYCProfile = doc.id;
+      sDateRegister = doc.data().DateRegister;
+      CheckFoundData = 1;
+      sessionStorage.setItem("EmpID", doc.data().empID);
+      sessionStorage.setItem("EmpName", doc.data().empName);
+      sessionStorage.setItem("EmpPhone", doc.data().empPhone);
+      sessionStorage.setItem("EmpGroup", doc.data().empGroup);
+      if(doc.data().StatusRegister==1) {
+        sessionStorage.setItem("StatusRegister", doc.data().StatusRegister);
+        window.location.href = 'mondee.html';
+      }
+      alert("found==="+sessionStorage.getItem("LineID"));
+      document.getElementById("txtEmpID").value = doc.data().empID;
+      document.getElementById("txtEmpName").value = doc.data().empName;
+      document.getElementById("txtEmpPhone").value = doc.data().empPhone;
+      document.getElementById("txtEmpGroup").value = doc.data().empGroup;
+      WaitingPage();
+    });
+    OpenForm();
+  });
+
+
+*/
+
+
+
 }
 
 
 
 function CheckData() {
-  alert("Line91---"+sessionStorage.getItem("LineID"));
   console.log(sessionStorage.getItem("LineID")+"=====");
   dbProfile.where('lineID','==',sessionStorage.getItem("LineID"))
   .get().then((snapshot)=> {
