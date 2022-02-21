@@ -31,7 +31,6 @@ $(document).ready(function () {
 
   main()
   Connect_DB();
-  //CheckBootCampOpen();
 });
 
 
