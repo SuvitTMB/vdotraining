@@ -124,7 +124,7 @@ function Connect_DB() {
 
 
 function CheckData() {
-  console.log(sessionStorage.getItem("LineID")+"=====");
+  console.log("Line 127="+sessionStorage.getItem("LineID")+"=====");
   dbProfile.where('lineID','==',sessionStorage.getItem("LineID"))
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
