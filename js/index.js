@@ -71,8 +71,9 @@ function openWindow() {
 
 
 function Connect_DB() {
-  alert(sessionStorage.getItem("LineID"));
-  if(sessionStorage.getItem("LineID")=='null') { main(); }
+  if(sessionStorage.getItem("LineID")==null) { main(); }
+  console.log("Line 75 ="+sessionStorage.getItem("LineID")+" === "+sessionStorage.getItem("LineName"));
+  //alert(sessionStorage.getItem("LineID"));
   var firebaseConfig = {
     apiKey: "AIzaSyDfTJJ425U4OY0xac6jdhtSxDeuJ-OF-lE",
     authDomain: "retailproject-6f4fc.firebaseapp.com",
