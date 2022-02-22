@@ -30,7 +30,7 @@ $(document).ready(function () {
   */
 
   main()
-  Connect_DB();
+  //Connect_DB();
   //CheckData();
 });
 
@@ -58,6 +58,7 @@ async function getUserProfile() {
   str += '<div class="NameLine">'+ sessionStorage.getItem("LineName")+'</div>';
   //alert(sessionStorage.getItem("LineID"));
   $("#MyProfile").html(str);  
+  Connect_DB();
 }
 
 
@@ -70,6 +71,7 @@ function openWindow() {
 
 
 function Connect_DB() {
+  alert(sessionStorage.getItem("LineID"));
   if(sessionStorage.getItem("LineID")=='null') { main(); }
   var firebaseConfig = {
     apiKey: "AIzaSyDfTJJ425U4OY0xac6jdhtSxDeuJ-OF-lE",
