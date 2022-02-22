@@ -86,8 +86,8 @@ function Connect_DB() {
   };
   firebase.initializeApp(firebaseConfig);
   dbProfile = firebase.firestore().collection("CheckProfile");
-  //CheckData();
-alert(sessionStorage.getItem("LineID"));
+  CheckData();
+//alert(sessionStorage.getItem("LineID"));
 /*
   console.log(sessionStorage.getItem("LineID")+"=====");
   dbProfile.where('lineID','==',sessionStorage.getItem("LineID"))
