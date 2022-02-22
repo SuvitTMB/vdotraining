@@ -72,7 +72,7 @@ function openWindow() {
 
 function Connect_DB() {
   if(sessionStorage.getItem("LineID")==null) { main(); }
-  console.log("Line 75 ="+sessionStorage.getItem("LineID")+" === "+sessionStorage.getItem("LineName"));
+  //console.log("Line 75 ="+sessionStorage.getItem("LineID")+" === "+sessionStorage.getItem("LineName"));
   //alert(sessionStorage.getItem("LineID"));
   var firebaseConfig = {
     apiKey: "AIzaSyDfTJJ425U4OY0xac6jdhtSxDeuJ-OF-lE",
@@ -124,7 +124,7 @@ function Connect_DB() {
 
 
 function CheckData() {
-  console.log("Line 127="+sessionStorage.getItem("LineID")+"=====");
+  //console.log("Line 127="+sessionStorage.getItem("LineID")+"=====");
   dbProfile.where('lineID','==',sessionStorage.getItem("LineID"))
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
@@ -139,7 +139,7 @@ function CheckData() {
         sessionStorage.setItem("StatusRegister", doc.data().StatusRegister);
         window.location.href = 'mondee.html';
       }
-      alert("found==="+sessionStorage.getItem("LineID"));
+      //alert("found==="+sessionStorage.getItem("LineID"));
       document.getElementById("txtEmpID").value = doc.data().empID;
       document.getElementById("txtEmpName").value = doc.data().empName;
       document.getElementById("txtEmpPhone").value = doc.data().empPhone;
