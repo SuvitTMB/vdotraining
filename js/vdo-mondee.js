@@ -15,6 +15,8 @@ var SelectQuestionID = "";
 var SelectPosition  = 0;
 var NumberAnswer = 0;
 var sQuestionAnswer = 0;
+var dateString = new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' });
+
 
 $(document).ready(function () {
   if(sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
@@ -59,6 +61,7 @@ function getParameterByName(name, url) {
 var sShowQuestion = 0;
 function LoadVDOid() {
   NewDate();
+  var TimeStampDate = Math.round(Date.now() / 1000);
   var str = "";
   var str1 = "";
   dbVDOTraining.where(firebase.firestore.FieldPath.documentId(),"==", VDOid)
@@ -79,6 +82,7 @@ function LoadVDOid() {
       EmpName : sessionStorage.getItem("EmpName"),
       VDOgroup : doc.data().VDOgroup,
       VDOName : doc.data().VDOname,
+      TimeStampDate : TimeStampDate,
       DateClick : dateString
     });
 
