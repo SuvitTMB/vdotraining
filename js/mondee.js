@@ -24,7 +24,7 @@ function Connect_DB() {
   };
   firebase.initializeApp(firebaseConfig);
   dbVDOTraining = firebase.firestore().collection("VDOTraining");
-  dbVDOLog = firebase.firestore().collection("VDOLog");
+  dbVDOLog = firebase.firestore().collection("VDOlog");
   LoadVDOTraining();
 }
 
@@ -69,8 +69,8 @@ function OpenVdo(x,r,n) {
     LineID : sessionStorage.getItem("LineID"),
     EmpID : sessionStorage.getItem("EmpID"),
     EmpName : sessionStorage.getItem("EmpName"),
-    //VDOgroup : sVDOgroup,
-    //VDOName : n,
+    VDOgroup : sVDOgroup,
+    VDOName : n,
     DateClick : dateString
   });
   alert("log");
