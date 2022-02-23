@@ -3,6 +3,7 @@ var dbVDOTraining = "";
 var dbVDOLog = "";
 var sVDOgroup = 2;
 var dateString = "";
+var today = new Date();
 
 $(document).ready(function () {
   if(sessionStorage.getItem("LineID")=="") { location.href = "index.html"; }
@@ -68,8 +69,8 @@ function OpenVdo(x,r,n) {
     LineID : sessionStorage.getItem("LineID"),
     EmpID : sessionStorage.getItem("EmpID"),
     EmpName : sessionStorage.getItem("EmpName"),
-    VDOgroup : sVDOgroup,
-    VDOName : n,
+    //VDOgroup : sVDOgroup,
+    //VDOName : n,
     DateClick : dateString
   });
   alert("log");
@@ -101,8 +102,6 @@ function NewDate() {
   seconds = checkZero(seconds);
 
   dateString = day + "/" + month + "/" + year + " " + hour + ":" + minutes + ":" + seconds +" "+ ampm;
-  //alert(GetNewDate);
-  //console.log(day + "/" + month + "/" + year + " " + hour + ":" + minutes + ":" + seconds +" "+ ampm);
 }
 
 
