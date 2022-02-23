@@ -1,12 +1,11 @@
 var cleararray = "";
 var dbVDOTraining = "";
-var dbVDOLog = "";
 var sVDOgroup = 2;
 var dateString = "";
 var today = new Date();
 
 $(document).ready(function () {
-  if(sessionStorage.getItem("LineID")=="") { location.href = "index.html"; }
+  if(sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
   Connect_DB(); 
 });
 
@@ -24,7 +23,7 @@ function Connect_DB() {
   };
   firebase.initializeApp(firebaseConfig);
   dbVDOTraining = firebase.firestore().collection("VDOTraining");
-  dbVDOLog = firebase.firestore().collection("VDOlog");
+  //dbVDOLog = firebase.firestore().collection("VDOlog");
   LoadVDOTraining();
 }
 
@@ -63,6 +62,7 @@ function LoadVDOTraining() {
 
 
 function OpenVdo(x,r,n) {
+  /*
   NewDate();
   alert(n);
   dbVDOLog.add({
@@ -74,6 +74,7 @@ function OpenVdo(x,r,n) {
     DateClick : dateString
   });
   alert("log");
+  */
   location.href = "vdo-mondee.html?gid="+x+"";
 }
 

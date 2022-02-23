@@ -2,6 +2,7 @@ var cleararray = "";
 var dbVDOTraining = "";
 var dbVDOQuestion = "";
 var dbVDOAnswer = "";
+var dbVDOLog = "";
 var VDOid = "";
 var sCheckBottom = 0;
 var stxtQuestion = "";
@@ -16,7 +17,7 @@ var NumberAnswer = 0;
 var sQuestionAnswer = 0;
 
 $(document).ready(function () {
-  if(sessionStorage.getItem("LineID")=="") { location.href = "index.html"; }
+  if(sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
 	VDOid = getParameterByName('gid');
  	Connect_DB();
 });
@@ -37,6 +38,7 @@ function Connect_DB() {
   dbVDOTraining = firebase.firestore().collection("VDOTraining");
   dbVDOQuestion = firebase.firestore().collection("VDOQuestion");
   dbVDOAnswer = firebase.firestore().collection("VDOAnswer");
+  dbVDOLog = firebase.firestore().collection("VDOlog");
   LoadVDOid();
 }
 
@@ -56,18 +58,30 @@ function getParameterByName(name, url) {
 
 var sShowQuestion = 0;
 function LoadVDOid() {
+  NewDate();
   var str = "";
   var str1 = "";
   dbVDOTraining.where(firebase.firestore.FieldPath.documentId(),"==", VDOid)
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
-    	var sRead = parseInt(doc.data().VDOread)+1;
-    	sShowQuestion = doc.data().ShowQuestion;
-    	sQuestionSend = doc.data().QuestionSend;
-    	sQuestionAnswer = doc.data().QuestionAnswer;
+  	var sRead = parseInt(doc.data().VDOread)+1;
+  	sShowQuestion = doc.data().ShowQuestion;
+  	sQuestionSend = doc.data().QuestionSend;
+  	sQuestionAnswer = doc.data().QuestionAnswer;
 		dbVDOTraining.doc(VDOid).update({
 			VDOread : parseInt(sRead) 
 		});
+
+
+    dbVDOLog.add({
+      LineID : sessionStorage.getItem("LineID"),
+      EmpID : sessionStorage.getItem("EmpID"),
+      EmpName : sessionStorage.getItem("EmpName"),
+      VDOgroup : doc.data().VDOgroup,
+      VDOName : doc.data().VDOname,
+      DateClick : dateString
+    });
+
 		str +='<div style="max-height:320px;"><center>';
     str +='<iframe width="100%" height="230" src="'+doc.data().VDOurl+'?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 		//str +='<iframe width="100%" height="280" src="'+doc.data().VDOurl+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
@@ -175,7 +189,7 @@ function SaveAnswer() {
 		QuestionAnswer : parseInt(sQuestionAnswer) 
 	});
     $("#FriendANS").html(parseInt(sQuestionAnswer)+" คำตอบ");
-	document.getElementById("txtAnswer").value = "";
+	  document.getElementById("txtAnswer").value = "";
     GetAnswer(SelectQuestionID,SelectPosition);
    	document.getElementById("id03").style.display = "none";
    	document.getElementById("id04").style.display = "block";
@@ -193,10 +207,10 @@ function CountView(x,n) {
     snapshot.forEach(doc=> {
     	var sRead = parseInt(doc.data().QuestionView)+1;
     	var sAns = doc.data().QuestionAnswer;
-		dbVDOQuestion.doc(x).update({
-			QuestionView : parseInt(sRead) 
-		});
-		$("#ReadView-"+n+"").html("("+sRead+" อ่าน | "+sAns+" คำตอบ)");
+  		dbVDOQuestion.doc(x).update({
+  			QuestionView : parseInt(sRead) 
+  		});
+  		$("#ReadView-"+n+"").html("("+sRead+" อ่าน | "+sAns+" คำตอบ)");
 		//$("#ReadView-"+n+"").html("( "+sRead+" View )");
     });
   });
