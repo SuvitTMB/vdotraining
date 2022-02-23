@@ -61,7 +61,7 @@ function LoadVDOTraining() {
 
 
 
-function OpenVdo(x,r,n,g) {
+function OpenVdo(x,r,n) {
   NewDate();
   dbVDOLog.add({
     LineID : sessionStorage.getItem("LineID"),
