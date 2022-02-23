@@ -36,7 +36,7 @@ function LoadVDOTraining() {
   .limit(10).get().then((snapshot)=> {
     snapshot.forEach(doc=> {
     i = i+1;
-		str += '<div class="col-lg-6 col-md-2 slide text-center boxvdo" data-aos="fade-left" onclick="OpenVdo(\''+ doc.id +'\','+i+','+doc.data().VDOname+')">';
+		str += '<div class="col-lg-6 col-md-2 slide text-center boxvdo" data-aos="fade-left" onclick="OpenVdo(\''+ doc.id +'\','+i+',\''+doc.data().VDOname+'\')">';
 		str += '<div class="boxvdo-border member"><div class="boxvdo-img">';
 		str += '<img src="'+doc.data().VDOimg+'" class="img-fluid" style="border-radius: 10px;"></div>';
 		str += '<div class="boxvdo-title"><div class="boxvdo-header">'+doc.data().VDOname+'</div>';
