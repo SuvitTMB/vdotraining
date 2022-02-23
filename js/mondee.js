@@ -63,6 +63,7 @@ function LoadVDOTraining() {
 
 function OpenVdo(x,r,n) {
   NewDate();
+  alert(n);
   dbVDOLog.add({
     LineID : sessionStorage.getItem("LineID"),
     EmpID : sessionStorage.getItem("EmpID"),
@@ -71,6 +72,7 @@ function OpenVdo(x,r,n) {
     VDOName : n,
     DateClick : dateString
   });
+  alert("log");
   location.href = "vdo-mondee.html?gid="+x+"";
 }
 
