@@ -21,6 +21,7 @@ function Connect_DB() {
   };
   firebase.initializeApp(firebaseConfig);
   dbVDOTraining = firebase.firestore().collection("VDOTraining");
+  dbVDOLog = firebase.firestore().collection("VDOLog");
   LoadVDOTraining();
 }
 
@@ -35,7 +36,7 @@ function LoadVDOTraining() {
   .limit(10).get().then((snapshot)=> {
     snapshot.forEach(doc=> {
     i = i+1;
-		str += '<div class="col-lg-6 col-md-2 slide text-center boxvdo" data-aos="fade-left" onclick="OpenVdo(\''+ doc.id +'\','+i+')">';
+		str += '<div class="col-lg-6 col-md-2 slide text-center boxvdo" data-aos="fade-left" onclick="OpenVdo(\''+ doc.id +'\','+i+','+doc.data().VDOname+','+doc.data().VDOgroup+')">';
 		str += '<div class="boxvdo-border member"><div class="boxvdo-img">';
 		str += '<img src="'+doc.data().VDOimg+'" class="img-fluid" style="border-radius: 10px;"></div>';
 		str += '<div class="boxvdo-title"><div class="boxvdo-header">'+doc.data().VDOname+'</div>';
@@ -58,7 +59,16 @@ function LoadVDOTraining() {
 
 
 
-function OpenVdo(x,r) {
+function OpenVdo(x,r,n,g) {
+  NewDate();
+  dbVDOLog.add({
+    LineID : sessionStorage.getItem("LineID"),
+    EmpID : sessionStorage.getItem("EmpID"),
+    EmpName : sessionStorage.getItem("EmpName"),
+    VDOgroup : g,
+    VDOName : n,
+    DateClick : dateString
+  });
   location.href = "vdo-mondee.html?gid="+x+"";
 }
 
