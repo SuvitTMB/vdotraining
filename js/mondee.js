@@ -1,5 +1,6 @@
 var cleararray = "";
 var dbVDOTraining = "";
+var dbVDOLog = "";
 var sVDOgroup = 2;
 var dateString = "";
 
