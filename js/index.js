@@ -135,8 +135,8 @@ function CheckData() {
       sessionStorage.setItem("EmpName", doc.data().empName);
       sessionStorage.setItem("EmpPhone", doc.data().empPhone);
       sessionStorage.setItem("EmpGroup", doc.data().empGroup);
-      if(doc.data().StatusRegister==1) {
-        sessionStorage.setItem("StatusRegister", doc.data().StatusRegister);
+      if(doc.data().statusconfirm==1) {
+        sessionStorage.setItem("StatusRegister", doc.data().statusconfirm);
         window.location.href = 'mondee.html';
       }
       //alert("found==="+sessionStorage.getItem("LineID"));
