@@ -1,3 +1,5 @@
+var dbProfile = "";
+var dbVDOTrainingGroup = "";
 
 
 $(document).ready(function () {
