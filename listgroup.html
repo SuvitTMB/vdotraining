@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>LINE Retail Society</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <!-- End Google Tag Manager -->
+  <link href="./img/favicom.ico" rel="icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href='css/ekachon.css' rel="stylesheet" type="text/css">
+  <link href='css/button.css' rel="stylesheet" type="text/css">
+  <link href='css/style.css' rel="stylesheet" type="text/css">
+  <link href='css/vdo.css' rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href='css/w3.css' rel="stylesheet" type="text/css">
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="home.html" style="font-size: 14px;">LINE Retail Society</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="home.html">หน้าแรก</a></li>
+          <!--
+          <li><a href="#services">หมวดหมู่</a></li>
+          <li><a href="#portfolio">ตารางผู้นำ</a></li>
+          <li><a href="#contact">ค้นหาสื่อ</a></li>
+          -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <main id="main">
+    <section id="team" class="team section-bg">
+      <div class="container">
+        <div class="section-title">
+          <center>
+            <div class="h3div" style="color:#002d63;margin:80px auto 20px auto;">ประกัน มันส์ ดีย์
+              <div style="font-weight: 600; color:#0056ff; font-size: 14px;" id="DisplayNameGroup"></div>
+            </div>
+          </center>
+        </div>
+        <div class="row">
+          <div id="DisplayVDO"></div>
+        </div>
+      </div>
+    </section>
+    <div class="clr"></div>
+    <center>
+    <div class="btn-t1" style="margin-top:30px;font-size:11px;" onclick="window.location.href='home.html';">ดูวิดีโอย้อนหลัง</div>
+    </center>
+  </main>
+  <!-- End #main -->
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <div style="font-size:12px;font-weight: 600;"><font color="green">LINE</font> <font color="#002d63">Retail</font> 
+    <font color="#0056ff">So</font><font color="#f68b1f">ciety</font></div>
+</footer>
+
+
+<script src="./js/session.js"></script>
+<script src="./js/listgroup.js"></script>
+
+<!--
+<div id="id01" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content w3-card-4">
+    <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+      <div>
+        <center>
+          <div class="text-4heart1" id="NameVDO" style="padding:30px 40px 20px 40px; color:#0056ff;"></div>
+          <div id="PlayVDO"></div>
+        </center>
+      </div>
+      <center>
+        <div class="btn-t2" onclick="CloseAll()">ปิดหน้าต่าง</div>
+      </center>
+    </div>
+  </div>
+</div>
+-->
+
+
+</body>
+</html>

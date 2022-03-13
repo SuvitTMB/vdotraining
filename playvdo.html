@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>LINE Retail Society</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <!-- End Google Tag Manager -->
+  <link href="./img/favicom.ico" rel="icon">
+  <link href='css/ekachon.css' rel="stylesheet" type="text/css">
+  <link href='css/button.css' rel="stylesheet" type="text/css">
+  <link href='css/style.css' rel="stylesheet" type="text/css">
+  <link href='css/vdo.css' rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+  <link href='css/w3.css' rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+
+<style>
+.navbar-default {
+  background-color: #0056ff;
+}
+.template_faq {
+    background: #edf3fe none repeat scroll 0 0;
+}
+.panel-group {
+/*
+    background: #fff none repeat scroll 0 0; 
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.04);
+*/
+    border-radius: 3px;
+    margin-bottom: 0;
+    padding: 20px;
+}
+#accordion .panel {
+    border: medium none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0 0 15px 10px;
+}
+#accordion .panel-heading {
+    border-radius: 30px;
+    padding: 0;
+}
+#accordion .panel-title a {
+    background: #f68b1f none repeat scroll 0 0;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 20px 10px 50px;
+    position: relative;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+}
+#accordion .panel-title a.collapsed {
+    background: #f0f0f0 none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    color: #333;
+}
+#accordion .panel-title a::after, #accordion .panel-title a.collapsed::after {
+    background: #0056ff none repeat scroll 0 0;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.58);
+    color: #fff;
+    content: "";
+    font-family: fontawesome;
+    font-size: 25px;
+    height: 55px;
+    left: -20px;
+    line-height: 55px;
+    position: absolute;
+    text-align: center;
+    top: -5px;
+    transition: all 0.3s ease 0s;
+    width: 55px;
+}
+#accordion .panel-title a.collapsed::after {
+    background: #d6d4d4 none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    color: #333;
+    content: "";
+}
+#accordion .panel-body {
+    background: transparent none repeat scroll 0 0;
+    border-top: medium none;
+    padding: 20px 25px 10px 9px;
+    position: relative;
+    line-height:1.3;
+}
+#accordion .panel-body p {
+    border-left: 1px dashed #8c8c8c;
+    padding-left: 20px;
+}
+.navbar-default .navbar-toggle { 
+    border-color: #0056ff;
+}
+</style>
+
+
+</head>
+
+<body id="myPage" data-spy="scroll" data-target="navbar" data-offset="60">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!--
+  <div class="navbar1" style="height: 90px;background: none;">
+    <div class="msb-reply">
+      <textarea id="TextMamo" placeholder="พิมพ์ข้อความของคุณที่นี่..."></textarea>
+      <button style="background: #f68b1f;" onclick="CheckMemo()"><i class="fa fa-paper-plane-o"></i></button>
+    </div>
+  </div>
+-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="home.html" style="font-size: 14px;">LINE Retail Society</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="home.html">หน้าแรก</a></li>
+          <!--
+          <li><a href="#services">หมวดหมู่</a></li>
+          <li><a href="#portfolio">ตารางผู้นำ</a></li>
+          <li><a href="#contact">ค้นหาสื่อ</a></li>
+          -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="container-max">
+  <div class="ldp carousel-inner">
+    <div id="PlayVDO"></div>
+  </div>
+  <div class="container bootstrap snippets bootdey">
+    <div style="height: 50px;margin-top:20px;font-size: 12px;margin-top:10px;">
+      <div id="NameVDO"></div>
+      <div id="DetailVDO"></div>
+      <div id="SocialICON" style="margin-top:15px;"></div>
+    </div>
+  </div>
+</div>
+<div class="clr"></div>
+
+<div id="CheckQuestion" class="container" style="display: none;">
+  <center>
+    <div class="h3div" style="color:#002d63;margin:60px auto 15px auto;font-size: 12px;">คำถาม-คำตอบจากข้อสงสัย</div>
+  </center>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div id="DisplayQuestion" style="margin-top:-15px;"></div>
+  </div>
+  <center>
+    <div class="h3div" style="color:#002d63;margin:20px auto 15px auto;font-size: 12px;color:#f68b1f;">ตั้งคำถามที่นี่หากคุณมีข้อสงสัย</div>
+  </center>
+  <div>
+    <div class="input_field" style="width:100% !important;"> 
+      <div class="input_field" style="width:100% !important;"> 
+        <input type="text" class="form-control" id="txtQuestion" style="font-size: 12px !important; color:#0056ff;padding:5px;" placeholder="หัวข้อคำถาม" required/>
+      </div>
+      <div>
+      <textarea class="form-control" id="txtDetail" style="height:100px;vertical-align: text-top;font-size: 12px !important; color:#0056ff;padding:8px;margin-top:5px;padding:5px;" placeholder="รายละเอียดคำถาม" required></textarea>
+      </div>
+      <center>
+        <div class="btn-t2" onclick="ClickSaveProfile()" type="submit" style="margin-top:20px;font-size:11px;">บันทึกข้อมูล</div>
+      </center>
+    </div>
+  </div>
+</div>
+
+
+<div style="height: 20px"></div>
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <center>
+    <div class="btn-t1" style="margin-top:10px;font-size:11px;" onclick="BackVdo()">ดูวิดีโอย้อนหลัง</div>
+  </center>
+  <div style="font-size:12px;font-weight: 600;margin-top:10px;"><font color="green">LINE</font> <font color="#002d63">Retail</font>
+  <font color="#0056ff">So</font><font color="#f68b1f">ciety</font></div>
+</footer>
+
+
+<script src="js/playvdo.js"></script>
+
+
+<div id="id01" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content w3-card-4">
+    <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+      <div>
+        <center>
+          <div style="margin-top:50px;"><img src="./img/false@.jpg" width="120"></div>
+          <div style="font-size: 15px; color:#f68b1f; padding:20px;">กรุณากรอกข้อมูลให้ครบถ้วน<br>ก่อนทำการบันทึกรายการ</div>
+        </center>
+      </div>
+      <center>
+        <div class="btn-t2" onclick="CloseAll()" style="margin-top:30px; margin-bottom: 20px;">ปิดหน้าต่าง</div>
+      </center>
+    </div>
+  </div>
+</div>
+
+<div id="id02" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content w3-card-4">
+    <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+      <div>
+        <center>
+          <div style="margin-top:50px;"><img src="./img/true@.jpg" width="120"></div>
+          <div style="font-size: 15px; color:#0056ff; padding:20px;">ระบบได้ทำการบันทึก<br>คำถามของท่านแล้ว</div>
+        </center>
+      </div>
+      <center>
+        <div class="btn-t1" onclick="CloseAll()" style="margin-top:30px; margin-bottom: 20px;font-size: 11px;">ปิดหน้าต่าง</div>
+      </center>
+    </div>
+  </div>
+</div>
+
+
+<div id="id03" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content w3-card-4">
+    <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+      <div>
+        <center>
+          <div style="margin-top:10px;font-size: 13px; color:#002d63; font-weight: 600;">คำถามจากเพื่อน</div>
+          <div style="padding-top:20px; color:#f68b1f;text-align: left;font-weight: 600;" id="HeadQuestion"></div>
+          <div style="padding-top:0px; color:#666666;text-align: left;line-height: 1.3" id="DetailQuestion"></div>
+          <div style="margin-top:30px;font-size: 13px; color:#002d63; font-weight: 600;">ช่วยตอบคำถามให้เพื่อน</div>
+          <div>
+            <textarea class="form-control" id="txtAnswer" style="height:100px;vertical-align: text-top;font-size: 12px !important; color:#0056ff;padding:8px;margin-top:5px;padding:5px;" placeholder="รายละเอียดคำตอบ" required></textarea>
+          </div>
+          <div class="clr" style="margin:10px auto;">
+            <div class="btn-t1" onclick="SaveAnswer()" style="font-size: 11px;">บันทึกรายการ</div>
+            <div class="btn-t2" onclick="CloseAll()" style="font-size: 11px;">ปิดหน้าต่าง</div>
+          </div>
+        </center>
+      </div>
+    </div>
+  </div>
+  <div class="clr" style="height: 30px;"></div>
+</div>
+
+<div id="id04" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content w3-card-4">
+    <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+      <div>
+        <center>
+          <div style="margin-top:50px;"><img src="./img/true@.jpg" width="120"></div>
+          <div style="font-size: 15px; color:#0056ff; padding:20px;">ระบบได้ทำการบันทึก<br>คำตอบของท่านแล้ว</div>
+        </center>
+      </div>
+      <center>
+        <div class="btn-t1" onclick="CloseAll()" style="margin-top:30px; margin-bottom: 20px;font-size: 11px;">ปิดหน้าต่าง</div>
+      </center>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  (function($) {
+    'use strict';
+    
+    jQuery(document).on('ready', function(){
+    
+        $('a.page-scroll').on('click', function(e){
+          var anchor = $(this);
+          $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top - 50
+          }, 1500);
+          e.preventDefault();
+        });   
+
+    });         
+  })(jQuery);
+</script>
+</body>
+</html>
