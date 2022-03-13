@@ -108,7 +108,7 @@ function LoadVDOTrainingGroup() {
     i = i+1;
     str += '<div class="col-lg-6 col-md-2 slide text-center" data-aos="fade-left">';
     str += '<div style="position: relative;"><img src="'+doc.data().VDOimg+'" class="img-fluid" style="border-radius: 10px;width:90%;margin:10px;"></div>';
-    str += '<div class="btn-t2" style="position: absolute; margin-top:-50px;font-size: 12px;right: 160px;" onclick="VDOGroup('+doc.data().VDOGroup+')">คลิกดูรายละเอียด</div></div>';
+    str += '<div class="btn-t2" style="position: absolute; margin-top:-50px;font-size: 12px;right: 130px;" onclick="VDOGroup('+doc.data().VDOGroup+')">คลิกดูรายละเอียด</div></div>';
     str += '';
     });
   $("#DisplayVDOGroup").html(str);
